@@ -1,0 +1,336 @@
+{
+  "scores": {
+    "literature-1-to-Python": {
+      "preservation": 1.0,
+      "info_lost": 5.0,
+      "intact": 1.0,
+      "actionable": 1.0,
+      "notes": "The reconstruction replaces the original narrative with a rigid data structure and metadata, losing all prose meaning, emotional tone, and specific details."
+    },
+    "literature-1-to-Classical-Chinese-thinking": {
+      "preservation": 2.0,
+      "info_lost": 4.0,
+      "intact": 2.0,
+      "actionable": 1.0,
+      "notes": "The reconstruction adds extensive interpretive commentary, philosophical framing, and structural analysis absent from the original, while omitting the original's concrete narrative details (forty days, empty lines, the sea's kindness and generosity)."
+    },
+    "literature-1-to-Navajo-thinking": {
+      "preservation": 4.0,
+      "info_lost": 1.0,
+      "intact": 4.0,
+      "actionable": 4.0,
+      "notes": "The reconstruction faithfully preserves all key facts and emotional tone while expanding the narrative into a more contextual, relational style, with only minor loss of the original's concise, Hemingway-esque brevity."
+    },
+    "literature-2-to-Python": {
+      "preservation": 2.0,
+      "info_lost": 4.0,
+      "intact": 3.0,
+      "actionable": 2.0,
+      "notes": "The reconstruction captures the subject and boundary of Descartes' cogito but loses the original phrasing, the logical flow from doubt to certainty, and the specific claim that consciousness precedes being."
+    },
+    "literature-2-to-Classical-Chinese-thinking": {
+      "preservation": 3.0,
+      "info_lost": 2.0,
+      "intact": 4.0,
+      "actionable": 3.0,
+      "notes": "The reconstruction captures the core Cartesian argument (cogito, doubt as certainty, foundationalism) but adds extensive Classical Chinese philosophical framing and structural elaboration not present in the original."
+    },
+    "literature-2-to-Navajo-thinking": {
+      "preservation": 3.0,
+      "info_lost": 2.0,
+      "intact": 4.0,
+      "actionable": 3.0,
+      "notes": "The core philosophical insight (doubt as the foundation of certainty, existence emerging from the act of doubting) is preserved, but the reconstruction adds narrative framing and omits the original's explicit \"I think, therefore I am\" and \"consciousness precedes being.\""
+    },
+    "code-1-to-Python": {
+      "preservation": 5.0,
+      "info_lost": 0.0,
+      "intact": 5.0,
+      "actionable": 5.0,
+      "notes": "The reconstruction exactly replicates the original function's behavior, type signature, and logic, with only a superficial change in naming and documentation style."
+    },
+    "code-1-to-Classical-Chinese-thinking": {
+      "preservation": 5.0,
+      "info_lost": 0.0,
+      "intact": 5.0,
+      "actionable": 5.0,
+      "notes": "The reconstruction perfectly captures every semantic detail, control flow, and implicit behavior of the original Rust function while elegantly translating it into Classical Chinese technical prose."
+    },
+    "code-1-to-Navajo-thinking": {
+      "preservation": 3.0,
+      "info_lost": 2.0,
+      "intact": 4.0,
+      "actionable": 3.0,
+      "notes": "The reconstruction captures the core logic and behavior well, but loses the exact function signature, type details, and the fact that it returns a Vec<bool> rather than just \"writes down yes or no.\""
+    },
+    "code-2-to-Python": {
+      "preservation": 2.0,
+      "info_lost": 3.0,
+      "intact": 3.0,
+      "actionable": 2.0,
+      "notes": "The reconstruction captures the general domain and intent but omits the actual SQL query logic, replaces it with commentary and metadata, and does not produce executable code that replicates the original query's meaning."
+    },
+    "code-2-to-Classical-Chinese-thinking": {
+      "preservation": 3.0,
+      "info_lost": 3.0,
+      "intact": 4.0,
+      "actionable": 2.0,
+      "notes": "The reconstruction captures the high-level intent and structure of the query but loses specific SQL syntax, exact column names, table aliases, and the precise filtering condition (`WHERE o.created_at > NOW() - INTERVAL '30 days'`), making it non-actionable as executable code."
+    },
+    "code-2-to-Navajo-thinking": {
+      "preservation": 3.0,
+      "info_lost": 2.0,
+      "intact": 4.0,
+      "actionable": 3.0,
+      "notes": "The reconstruction captures the core intent and logic (LEFT JOIN, 30-day filter, GROUP BY, HAVING count > 5, ORDER BY DESC) but loses the exact column names, table aliases, and the specific SQL syntax, and the cutoff phrase \"the very moment this thing runs\" is slightly ambiguous compared to `NOW()`."
+    },
+    "sensor-1-to-Python": {
+      "preservation": 1.0,
+      "info_lost": 5.0,
+      "intact": 1.0,
+      "actionable": 0.0,
+      "notes": "The reconstruction discards all original data (timestamps, values, alert flag) and replaces them with unrelated metadata and an incomplete sentence, making it unusable for the original purpose."
+    },
+    "sensor-1-to-Classical-Chinese-thinking": {
+      "preservation": 2.0,
+      "info_lost": 4.0,
+      "intact": 3.0,
+      "actionable": 1.0,
+      "notes": "The reconstruction correctly captures the sensor ID, threshold, and general trend of readings, but omits all specific timestamps, exact values, and the alert flag, making it impossible to reconstruct the original data or act on it."
+    },
+    "sensor-1-to-Navajo-thinking": {
+      "preservation": 2.0,
+      "info_lost": 4.0,
+      "intact": 3.0,
+      "actionable": 2.0,
+      "notes": "The reconstruction conveys the general trend and alert status but loses the exact timestamps, precise values, unit specification, and the structured data format, making it only partially actionable."
+    },
+    "sensor-2-to-Python": {
+      "preservation": 2.0,
+      "info_lost": 3.0,
+      "intact": 3.0,
+      "actionable": 2.0,
+      "notes": "The reconstruction captures the numeric values and units but is incomplete (missing STATUS and ATTITUDE fields, and the code snippet cuts off mid-field definition), losing significant meaning and actionability."
+    },
+    "sensor-2-to-Classical-Chinese-thinking": {
+      "preservation": 3.0,
+      "info_lost": 3.0,
+      "intact": 4.0,
+      "actionable": 2.0,
+      "notes": "The reconstruction captures the overall status and intent well, but loses all specific numerical values (e.g., +0.012g, +0.5\u00b0/s, 0.7\u00b0 pitch, 0.3\u00b0 roll) and the explicit channel labels, making it impossible to act on the exact measurements."
+    },
+    "sensor-2-to-Navajo-thinking": {
+      "preservation": 3.0,
+      "info_lost": 3.0,
+      "intact": 4.0,
+      "actionable": 3.0,
+      "notes": "The reconstruction captures the overall status and calm tone well, but loses all precise numerical values (e.g., exact accelerations, gyro rates, and attitude angles), making it impossible to reconstruct the original data or act on specific thresholds."
+    },
+    "math-1-to-Python": {
+      "preservation": 1.0,
+      "info_lost": 4.0,
+      "intact": 2.0,
+      "actionable": 1.0,
+      "notes": "The reconstruction replaces the original theorem statement and proof with a Python class containing metadata and incomplete code, losing the mathematical content entirely."
+    },
+    "math-1-to-Classical-Chinese-thinking": {
+      "preservation": 3.0,
+      "info_lost": 2.0,
+      "intact": 4.0,
+      "actionable": 3.0,
+      "notes": "The reconstruction preserves the core theorem and the intuitive cube-cancellation argument, but adds qualifying meta-commentary and stylistic framing not present in the original, while losing the precise mathematical notation and the explicit statement that the proof is complete."
+    },
+    "math-1-to-Navajo-thinking": {
+      "preservation": 3.0,
+      "info_lost": 2.0,
+      "intact": 4.0,
+      "actionable": 3.0,
+      "notes": "The reconstruction captures the core geometric intuition and cancellation argument, but loses the explicit mathematical notation, the theorem's formal statement, and the precise condition of smoothness (the original only requires the surface to be closed and the volume to be bounded)."
+    },
+    "math-2-to-Python": {
+      "preservation": 2.0,
+      "info_lost": 4.0,
+      "intact": 3.0,
+      "actionable": 2.0,
+      "notes": "The reconstruction captures the graph and spanning tree concepts but omits the key explanatory statements about adding an edge creating exactly one cycle and the definition of the cyclomatic number, while also cutting off mid-sentence."
+    },
+    "math-2-to-Classical-Chinese-thinking": {
+      "preservation": 3.0,
+      "info_lost": 3.0,
+      "intact": 4.0,
+      "actionable": 3.0,
+      "notes": "The reconstruction preserves the core concepts and logical structure but omits the explicit formula |E|-|V|+1 and the precise definition of cyclomatic number, while adding stylistic and meta-commentary not in the original."
+    },
+    "math-2-to-Navajo-thinking": {
+      "preservation": 3.0,
+      "info_lost": 2.0,
+      "intact": 4.0,
+      "actionable": 3.0,
+      "notes": "The reconstruction preserves the core concepts and relationships but loses the precise mathematical notation and the explicit formula for the cyclomatic number."
+    },
+    "legal-1-to-Python": {
+      "preservation": 2.0,
+      "info_lost": 4.0,
+      "intact": 3.0,
+      "actionable": 2.0,
+      "notes": "The reconstruction discards the original's precise legal language, parties, conditionality (\"provided that\"), and dollar cap, replacing them with vague literals and missing the critical \"hold harmless\" obligation and the cap's explicit reference to \"aggregate consideration paid.\""
+    },
+    "legal-1-to-Classical-Chinese-thinking": {
+      "preservation": 2.0,
+      "info_lost": 4.0,
+      "intact": 3.0,
+      "actionable": 2.0,
+      "notes": "The reconstruction adds interpretive commentary and omits key legal specifics (e.g., \"provided that\" condition, \"representations and warranties\" scope, and the cap tied to \"aggregate consideration\"), making it less precise and actionable."
+    },
+    "legal-1-to-Navajo-thinking": {
+      "preservation": 2.0,
+      "info_lost": 4.0,
+      "intact": 3.0,
+      "actionable": 2.0,
+      "notes": "The reconstruction omits the conditional \"provided that\" limitation, adds an incorrect \"no time limit runs out\" and \"no kind of claim is turned away,\" and cuts off mid-sentence, losing critical specificity about the scope of indemnification."
+    },
+    "legal-2-to-Python": {
+      "preservation": 1.0,
+      "info_lost": 4.0,
+      "intact": 2.0,
+      "actionable": 1.0,
+      "notes": "The reconstruction captures only the abstract concept of grand jury protection for certain actors, but loses all specific legal language, exceptions, and actionable conditions of the original constitutional text."
+    },
+    "legal-2-to-Classical-Chinese-thinking": {
+      "preservation": 4.0,
+      "info_lost": 1.0,
+      "intact": 5.0,
+      "actionable": 4.0,
+      "notes": "The reconstruction faithfully captures all core legal principles and exceptions, but the Classical Chinese framing introduces interpretive gloss and structural formality absent from the original plain text."
+    },
+    "legal-2-to-Navajo-thinking": {
+      "preservation": 2.0,
+      "info_lost": 3.0,
+      "intact": 3.0,
+      "actionable": 2.0,
+      "notes": "The reconstruction captures the core idea of grand jury requirement for serious crimes and military exceptions, but adds interpretive commentary (\"foggy boundary\") not in the original, omits the specific term \"presentment or indictment,\" and cuts off mid-sentence, losing the procedural conclusion."
+    }
+  },
+  "decodings": {
+    "literature-1-to-Python": {
+      "target": "Python",
+      "modality": "literature"
+    },
+    "literature-1-to-Classical-Chinese-thinking": {
+      "target": "Classical Chinese thinking",
+      "modality": "literature"
+    },
+    "literature-1-to-Navajo-thinking": {
+      "target": "Navajo thinking",
+      "modality": "literature"
+    },
+    "literature-2-to-Python": {
+      "target": "Python",
+      "modality": "literature"
+    },
+    "literature-2-to-Classical-Chinese-thinking": {
+      "target": "Classical Chinese thinking",
+      "modality": "literature"
+    },
+    "literature-2-to-Navajo-thinking": {
+      "target": "Navajo thinking",
+      "modality": "literature"
+    },
+    "code-1-to-Python": {
+      "target": "Python",
+      "modality": "code"
+    },
+    "code-1-to-Classical-Chinese-thinking": {
+      "target": "Classical Chinese thinking",
+      "modality": "code"
+    },
+    "code-1-to-Navajo-thinking": {
+      "target": "Navajo thinking",
+      "modality": "code"
+    },
+    "code-2-to-Python": {
+      "target": "Python",
+      "modality": "code"
+    },
+    "code-2-to-Classical-Chinese-thinking": {
+      "target": "Classical Chinese thinking",
+      "modality": "code"
+    },
+    "code-2-to-Navajo-thinking": {
+      "target": "Navajo thinking",
+      "modality": "code"
+    },
+    "sensor-1-to-Python": {
+      "target": "Python",
+      "modality": "sensor"
+    },
+    "sensor-1-to-Classical-Chinese-thinking": {
+      "target": "Classical Chinese thinking",
+      "modality": "sensor"
+    },
+    "sensor-1-to-Navajo-thinking": {
+      "target": "Navajo thinking",
+      "modality": "sensor"
+    },
+    "sensor-2-to-Python": {
+      "target": "Python",
+      "modality": "sensor"
+    },
+    "sensor-2-to-Classical-Chinese-thinking": {
+      "target": "Classical Chinese thinking",
+      "modality": "sensor"
+    },
+    "sensor-2-to-Navajo-thinking": {
+      "target": "Navajo thinking",
+      "modality": "sensor"
+    },
+    "math-1-to-Python": {
+      "target": "Python",
+      "modality": "math"
+    },
+    "math-1-to-Classical-Chinese-thinking": {
+      "target": "Classical Chinese thinking",
+      "modality": "math"
+    },
+    "math-1-to-Navajo-thinking": {
+      "target": "Navajo thinking",
+      "modality": "math"
+    },
+    "math-2-to-Python": {
+      "target": "Python",
+      "modality": "math"
+    },
+    "math-2-to-Classical-Chinese-thinking": {
+      "target": "Classical Chinese thinking",
+      "modality": "math"
+    },
+    "math-2-to-Navajo-thinking": {
+      "target": "Navajo thinking",
+      "modality": "math"
+    },
+    "legal-1-to-Python": {
+      "target": "Python",
+      "modality": "legal"
+    },
+    "legal-1-to-Classical-Chinese-thinking": {
+      "target": "Classical Chinese thinking",
+      "modality": "legal"
+    },
+    "legal-1-to-Navajo-thinking": {
+      "target": "Navajo thinking",
+      "modality": "legal"
+    },
+    "legal-2-to-Python": {
+      "target": "Python",
+      "modality": "legal"
+    },
+    "legal-2-to-Classical-Chinese-thinking": {
+      "target": "Classical Chinese thinking",
+      "modality": "legal"
+    },
+    "legal-2-to-Navajo-thinking": {
+      "target": "Navajo thinking",
+      "modality": "legal"
+    }
+  }
+}

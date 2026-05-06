@@ -1,0 +1,7 @@
+C1 [BOUNDARY] (priority=5): Strict operational boundaries for the `optimize` Rust function: requires non-empty, non-contradictory Vec<Bound> constraints list, valid Objective type input, finite f64 tolerance; returns Result<Solution, NoFeasiblePoint> where successful Solution instances guarantee solution.satisfies_all(constraints) == true, with no built-in handling for invalid precondition inputs like empty or contradictory constraints.
+C2 [PATTERN] (priority=3): Standard Rust typed utility function pattern using Result for error handling, with pre/post condition validation for input and output correctness.
+C3 [PROCESS] (priority=1): Executes constraint-based optimization workflow.
+C4 [KNOWLEDGE] (priority=1): Constraint satisfaction optimization tooling component.
+C5 [SOCIAL] (priority=1): For software developers integrating optimization tools.
+C6 [DEEP] (priority=2): Uses provided tolerance to control optimization precision, validates successful solutions against all input constraints, and returns a typed error when no feasible solution exists.
+C7 [INSTRUMENT] (priority=4): Core functional implementation of the optimize function: leverages Rust's strong type system for input safety, accepts three critical parameters (constraints, objective, tolerance), produces either a valid Solution or NoFeasiblePoint error, and enforces postcondition correctness for all successful outputs.

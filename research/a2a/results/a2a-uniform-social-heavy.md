@@ -1,0 +1,7 @@
+C1 [BOUNDARY]: Urgent executive communication from CTO; scope limited to Q3 release safety prerequisites; valid for legal, engineering, and board stakeholders only; expires post-Friday milestone
+C2 [PATTERN]: Declarative priority sequence: [Urgency/Sender] → [Board Request] → [Compliance Mandate] → [Work Gap] → [Release Impact]; follows top-down urgent alert structure
+C3 [PROCESS]: 1) Legal share ISO certification timeline by EOD Wed; 2) Engineering prioritize safety testing backlog; 3) Draft ISO-aligned safety report for board by Friday
+C4 [KNOWLEDGE]: Sender: CTO; Board request: Safety report due Friday; Legal mandate: ISO certification prior to report; Engineering status: No testing started; Impact: P0 Q3 release blocker
+C5 [SOCIAL]: Cross-departmental alert connecting executive leadership, legal, and engineering teams; conveys high-stakes collaboration need without assigning blame; prioritizes cross-functional alignment
+C6 [DEEP]: Missed Q3 release risks quarterly business targets; unaddressed prerequisites create both compliance and product launch risks; urgent action protects revenue and regulatory standing
+C7 [INSTRUMENT]: Tagged P0 in release management platform; routed to dedicated cross-functional alert channel; linked to ISO tracking and safety report repositories; requires daily status updates until Friday

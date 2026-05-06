@@ -1,0 +1,120 @@
+{
+  "flavors": {
+    "process-heavy": {
+      "C1": 3.0,
+      "C2": 2.0,
+      "C3": 4.0,
+      "C4": 0.0,
+      "C5": 0.0,
+      "C6": 0.0,
+      "C7": 1.0
+    },
+    "social-heavy": {
+      "C1": 0.0,
+      "C2": 3.0,
+      "C3": 2.0,
+      "C4": 2.0,
+      "C5": 4.0,
+      "C6": 0.0,
+      "C7": 0.0
+    },
+    "boundary-heavy": {
+      "C1": 5.0,
+      "C2": 4.0,
+      "C3": 0.0,
+      "C4": 0.0,
+      "C5": 0.0,
+      "C6": 0.0,
+      "C7": 0.0
+    },
+    "knowledge-heavy": {
+      "C1": 2.0,
+      "C2": 3.0,
+      "C3": 3.0,
+      "C4": 5.0,
+      "C5": 1.0,
+      "C6": 1.0,
+      "C7": 2.0
+    },
+    "deep-structure": {
+      "C1": 0.0,
+      "C2": 3.0,
+      "C3": 0.0,
+      "C4": 1.0,
+      "C5": 0.0,
+      "C6": 5.0,
+      "C7": 0.0
+    },
+    "balanced": {
+      "C1": 5.0,
+      "C2": 4.0,
+      "C3": 4.0,
+      "C4": 2.0,
+      "C5": 3.0,
+      "C6": 3.0,
+      "C7": 2.0
+    }
+  },
+  "scores": {
+    "process-heavy-attention": {
+      "preservation": 0.0,
+      "intent_match": 0.0,
+      "actionable": 0.0
+    },
+    "process-heavy-uniform": {
+      "preservation": null,
+      "intent_match": null,
+      "actionable": null
+    },
+    "social-heavy-attention": {
+      "preservation": 0.0,
+      "intent_match": 0.0,
+      "actionable": 0.0
+    },
+    "social-heavy-uniform": {
+      "preservation": 0.0,
+      "intent_match": 0.0,
+      "actionable": 0.0
+    },
+    "boundary-heavy-attention": {
+      "preservation": 3.0,
+      "intent_match": 2.0,
+      "actionable": 3.0
+    },
+    "boundary-heavy-uniform": {
+      "preservation": 2.0,
+      "intent_match": 3.0,
+      "actionable": 2.0
+    },
+    "knowledge-heavy-attention": {
+      "preservation": 0.0,
+      "intent_match": 0.0,
+      "actionable": 0.0
+    },
+    "knowledge-heavy-uniform": {
+      "preservation": 0.0,
+      "intent_match": 0.0,
+      "actionable": 0.0
+    },
+    "deep-structure-attention": {
+      "preservation": null,
+      "intent_match": null,
+      "actionable": null
+    },
+    "deep-structure-uniform": {
+      "preservation": 0.0,
+      "intent_match": 0.0,
+      "actionable": 0.0
+    },
+    "balanced-attention": {
+      "preservation": 1.0,
+      "intent_match": 1.0,
+      "actionable": 0.0
+    },
+    "balanced-uniform": {
+      "preservation": 1.0,
+      "intent_match": 1.0,
+      "actionable": 1.0
+    }
+  }
+}
