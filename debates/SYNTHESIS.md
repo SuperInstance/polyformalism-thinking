@@ -90,6 +90,23 @@ Combining the Architect's "Triangulation Core" with the AGI Designer's "Polyform
 
 5. **Automation doesn't eliminate the value.** Even if an LLM does the rewriting, the STRUCTURAL DIFFERENCES in the outputs still contain information. The insight is in the delta, not the effort.
 
+## DeepSeek's Unique Contribution (MoE Perspective)
+
+DeepSeek-v4-flash added a perspective the dense models couldn't:
+
+1. **MoE routing IS polyformalism at token level** — but sub-symbolic (continuous vectors), not symbolic formalisms. The gating mechanism bridges the gap.
+2. **Empirical evidence**: GLaM beat dense GPT-3 on 29/30 benchmarks with 70% fewer FLOPs. MoE forces specialization → emergent recombination.
+3. **Concrete PolyformalismLayer** — formalism-specific projectors + small transformers + per-token gating + residual convergence. Includes formalism diversity loss.
+4. **Key critique**: Framework assumes formalisms are PRE-DEFINED and DISCRETE. Real creativity comes from EMERGENT formalisms learned by the model. Dense models missed this because they have no experience with learned specialization.
+5. **Constraint=creativity via Go/Calligraphy**: "Constraint reduces the search space, allowing the search to go deeper."
+
+DeepSeek-v4-pro's formal analysis:
+- **Theorem 1 PROVEN**: Orthogonal formalisms produce strictly more information (rigorous proof)
+- **Theorem 2 DISPROVEN**: Harmonic k/n form contradicts own data. Corrected to non-increasing.
+- **Theorem 3 DISPROVEN**: Counterexample with rich F₁ dominating interface. Corrected to empirical pattern.
+
+The load-bearing wall is Theorem 1 — it's the only one that's a real theorem. Everything else is heuristic.
+
 ## Open Questions
 
 1. Can we formalize the "divergence metric" between formalisms? The 12-dimension framework is a start but needs empirical validation.

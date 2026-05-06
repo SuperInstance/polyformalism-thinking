@@ -20,17 +20,19 @@ If formalism A constrains dimension X and formalism B constrains dimension Y, wh
 
 *Proof sketch*: By definition, orthogonal constraints force orthogonal decisions. Each decision reveals information about the concept that the other constraint doesn't address. ∎
 
-### Theorem 2: Diminishing Returns After 3 Formalisms
+### Theorem 2: Non-Increasing Insight Returns
 
-The information gain from the nth formalism follows: I(n) ≈ k/n for n ≥ 3.
+The sequence of novel insights from sequential formalisms is non-increasing: I(n) ≥ I(n+1).
 
-*Empirical basis*: In our constraint theory project, the first rewrite (Rust → C++/Lua) produced 4 novel insights. The second (→ Rust/Python) produced 3. The third (→ Mojo/MLIR) produced 2. The fourth (→ TableGen) produced 1. All were unique, but rate decreased.
+*Originally claimed as I(n) ≈ k/n, but DeepSeek v4-pro disproved the harmonic form via counterexample.*
 
-### Theorem 3: Boundary Maximum Principle
+*Empirical basis*: Rust→C++/Lua=4 insights, →Rust/Python=3, →Mojo/MLIR=2, →TableGen=1. Non-increasing holds; harmonic k/n does not.
 
-For a two-formalism system F₁ × F₂, the maximum insight density occurs at the INTERFACE between formalisms, not within either formalism alone.
+### Observation 3: Boundary Insight Density
 
-*Evidence*: Cache-aligned 64-byte records were discovered at the C++/Lua FFI boundary. The `from_preset()` API was discovered at the Rust/Python PyO3 boundary.
+For a two-formalism system F₁ × F₂, the interface between formalisms is often a rich source of insights not obtainable from either formalism alone. This is an empirical pattern, not a universal theorem (DeepSeek v4-pro disproved the strong claim).
+
+*Evidence*: Cache-aligned 64-byte records at the C++/Lua FFI boundary. `from_preset()` at the Rust/Python PyO3 boundary. FLUX dialect at the Rust/MLIR compilation boundary.
 
 ## Selection Algorithm
 
