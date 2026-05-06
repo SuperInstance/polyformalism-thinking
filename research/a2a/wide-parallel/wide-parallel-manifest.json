@@ -1,0 +1,98 @@
+[
+  {
+    "model": "Qwen/Qwen3-Coder-480B-A35B-Instruct-Turbo",
+    "role": "architect",
+    "task": "devils_advocate",
+    "lines": 41,
+    "failed": false,
+    "file": "/tmp/wide-devils_advocate-architect.md"
+  },
+  {
+    "model": "Gryphe/MythoMax-L2-13b",
+    "role": "mythmaker",
+    "task": "reverse_actualization",
+    "lines": 17,
+    "failed": false,
+    "file": "/tmp/wide-reverse_actualization-mythmaker.md"
+  },
+  {
+    "model": "Sao10K/L3.1-70B-Euryale-v2.2",
+    "role": "provocateur",
+    "task": "reverse_actualization",
+    "lines": 21,
+    "failed": false,
+    "file": "/tmp/wide-reverse_actualization-provocateur.md"
+  },
+  {
+    "model": "stepfun-ai/Step-3.5-Flash",
+    "role": "connector",
+    "task": "novel_insight",
+    "lines": 41,
+    "failed": false,
+    "file": "/tmp/wide-novel_insight-connector.md"
+  },
+  {
+    "model": "google/gemma-4-26B-A4B-it",
+    "role": "generalist",
+    "task": "novel_insight",
+    "lines": 44,
+    "failed": false,
+    "file": "/tmp/wide-novel_insight-generalist.md"
+  },
+  {
+    "model": "ByteDance/Seed-2.0-pro",
+    "role": "analyst",
+    "task": "novel_insight",
+    "lines": 43,
+    "failed": false,
+    "file": "/tmp/wide-novel_insight-analyst.md"
+  },
+  {
+    "model": "NousResearch/Hermes-3-Llama-3.1-405B",
+    "role": "philosopher",
+    "task": "novel_insight",
+    "lines": 13,
+    "failed": false,
+    "file": "/tmp/wide-novel_insight-philosopher.md"
+  },
+  {
+    "model": "meta-llama/Llama-4-Maverick-17B-128E-Instruct-FP8",
+    "role": "pragmatist",
+    "task": "reverse_actualization",
+    "lines": 17,
+    "failed": false,
+    "file": "/tmp/wide-reverse_actualization-pragmatist.md"
+  },
+  {
+    "model": "Qwen/Qwen3.5-397B-A17B",
+    "role": "synthesizer",
+    "task": "novel_insight",
+    "lines": 1,
+    "failed": false,
+    "file": "/tmp/wide-novel_insight-synthesizer.md"
+  },
+  {
+    "model": "Qwen/Qwen3-235B-A22B-Thinking-2507",
+    "role": "thinker",
+    "task": "devils_advocate",
+    "lines": 63,
+    "failed": false,
+    "file": "/tmp/wide-devils_advocate-thinker.md"
+  },
+  {
+    "model": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
+    "role": "engineer",
+    "task": "devils_advocate",
+    "lines": 57,
+    "failed": false,
+    "file": "/tmp/wide-devils_advocate-engineer.md"
+  },
+  {
+    "model": "deepseek-ai/DeepSeek-R1-0528-Turbo",
+    "role": "logician",
+    "task": "devils_advocate",
+    "lines": 194,
+    "failed": false,
+    "file": "/tmp/wide-devils_advocate-logician.md"
+  }
+]
