@@ -1,0 +1,5 @@
+# inuktitut / nemotron / collective
+
+
+
+tukisuqtikiruqiqqaqtuqsikuqatigiqkujuk

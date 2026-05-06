@@ -1,0 +1,3 @@
+# piraha / seed / collective
+
+Western organizational theory misses how in small, tight-knit groups where every single person is present at every meeting—no remote folks, no split teams—when you all talk face-to-face, day after day, building trust by sharing simple, real things you saw or did right then and there, that’s how you get a group that works better than any one person alone. You don’t need fancy rules or big data. Just keep everyone in the same room, listening to each other’s immediate stories, and you build a shared sense of what’s real, fast. That’s the trick Western folks don’t get—they overcomplicate things with structures, but the smartest groups are just the ones that stay small, stay present, and talk straight from what they actually saw.
