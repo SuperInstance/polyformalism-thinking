@@ -109,6 +109,26 @@ The load-bearing wall is Theorem 1 — it's the only one that's a real theorem. 
 
 ## Open Questions
 
+### The 7-Type Constraint Taxonomy
+
+From our linguistic polyformalism research (`polyformalism-languages` repo):
+
+| Type | Language | What "Constraint" IS |
+|------|----------|---------------------|
+| Boundary | Greek (πέρας) | Definition = identity |
+| Pattern | Chinese (法) | Guidance, not limitation |
+| Process Shape | Navajo | Shape of events, not static rules |
+| Knowledge Source | Quechua (-mi/-si/-chá) | Epistemic provenance tracking |
+| Social Structure | Korean | Power dynamics between parties |
+| Deep Structure | Arabic (ق-ي-د) | Root pattern vs surface manifestation |
+| Instrument | Finnish (abessive) | Optional tool, absence also marked |
+
+**No single language captures all 7.** The intersection approaches completeness.
+
+---
+
+## Open Questions
+
 1. Can we formalize the "divergence metric" between formalisms? The 12-dimension framework is a start but needs empirical validation.
 2. What's the minimum viable polyformalism engine? Can we build one with current LLMs + structured output?
 3. How does polyformalism interact with chain-of-thought reasoning? Are they complementary or redundant?
