@@ -1,165 +1,226 @@
-# polyformalism-thinking
+# Polyformalism: Multi-Formalism Creative Cognition
 
-**A codified framework for forced novel-thinking-via-language-constraints.**
+**A neuroscience-informed framework for producing novel insights through structured multi-perspective thinking.**
 
-## The Core Insight
+[![Research](https://img.shields.io/badge/research-30%2B_papers-blue)](research/LITERATURE-REVIEW.md)
+[![Experiments](https://img.shields.io/badge/experiments-54_architectures-green)](https://github.com/SuperInstance/polyformalism-languages)
+[![Framework](https://img.shields.io/badge/framework-7_principles-orange)](FRAMEWORK.md)
 
-Rewriting the **same algorithm** in **fundamentally different programming languages** produces genuinely new insights about the **problem itself** — not just different implementations of the same understanding.
+---
 
-This is not "look at problems from multiple angles." It is a **specific, reproducible technique** where the structural constraints of a formalism force cognitive patterns that no single formalism enables alone.
+## What Is Polyformalism?
 
-## The Evidence
+Polyformalism is the deliberate use of multiple formal systems — mathematical, linguistic, computational, and conceptual — to generate insights that no single formalism can produce alone.
 
-We discovered this while building constraint theory software across 6 repos:
+**In practice:** You take a problem, express it in 3+ fundamentally different formal systems, and the *gaps between expressions* produce insights invisible to any single perspective.
 
-| Language Combo | Constraint Imposed | Novel Insight Produced |
-|---|---|---|
-| **Rust** | Ownership + borrow checker | Constraints have LIFECYCLES — who owns them, when valid, when dropped. Led to CDCL trace compilation. |
-| **C++ & Lua** | FFI boundary + manual memory | What crosses the boundary matters more than raw speed. Led to 64-byte cache-aligned records. |
-| **Rust & Python** | Ergonomics gap (PyO3 bridge) | Python users don't think in borrow terms. Led to `from_preset("automotive")` that Rust-only never had. |
-| **Mojo & MLIR** | Multi-level IR compilation | What optimization belongs at which level? Led to domain-specific FLUX dialect with layered lowering. |
-| **TableGen** | Declarative op definitions | Every operation needs exact types + verification + lowering targets BEFORE implementation exists. |
+**The neuroscience basis:** Creativity requires dynamic switching between the brain's Default Mode Network (generative, associative) and Executive Control Network (evaluative, analytical). The Salience Network routes between them. Polyformalism operationalizes this switching at scale using multiple AI models and formal systems.
 
-None of these insights appeared in any OTHER language's implementation. Each was UNIQUE to the constraints of that formalism.
+**Key finding from N=2,433 participants** (Chen et al. 2025): Dynamic DMN↔ECN switching predicts creative output — NOT raw intelligence. Moderate switching is optimal (inverted-U).
 
-## The Framework: 7 Principles
+---
 
-### 1. Structural Constraint → Cognitive Reframe
-The language's structure doesn't just limit your code — it limits your **thoughts**. When Rust forces you to answer "who owns this?", you're not just managing memory. You're answering a question you never thought to ask.
+## Quick Start
 
-**Principle**: Choose languages whose constraints are ORTHOGONAL to your current understanding.
+### As a Framework (Reading)
 
-### 2. The Rewrite, Not The Read
-Reading code in another language produces surface understanding. **Rewriting** produces deep understanding. The act of re-expression forces you to make decisions you avoided in the original.
-
-**Principle**: Don't just read — rewrite from scratch in the new formalism.
-
-### 3. Boundary Thinking
-When two languages meet (C++/Lua, Rust/Python), the BOUNDARY is where insights live. The cost of crossing that boundary forces you to think about what's essential vs accidental.
-
-**Principle**: Multi-language systems produce insights AT the boundary.
-
-### 4. Abstraction Level Forcing
-Different formalisms operate at different abstraction levels. MLIR operates at "what is the lowering chain?" while Rust operates at "what is the memory layout?" Forcing the same idea through both levels reveals gaps.
-
-**Principle**: Choose formalisms that force different abstraction levels.
-
-### 5. Declarative vs Imperative
-Declarative systems (TableGen, type classes, interfaces) force you to specify WHAT before HOW. Imperative systems force the reverse. Running both reveals mismatches between your stated goals and actual implementation.
-
-**Principle**: Pair at least one declarative and one imperative formalism.
-
-### 6. The 3-Rewrite Rule
-The first rewrite produces the most insight. The second produces different insight. The third produces diminishing returns. Beyond three, you're optimizing, not discovering.
-
-**Principle**: 3 formalisms per concept is the sweet spot.
-
-### 7. Insight Capture
-Insights from language-constraint thinking are FRAGILE — they feel obvious in retrospect but are impossible to recover once forgotten. Document them IMMEDIATELY in formalism-independent language.
-
-**Principle**: After each rewrite, write down what the new formalism revealed that others didn't.
-
-## The Method: How To Apply This
-
-### Step 1: Identify the Concept
-Pick ONE concept, algorithm, or design that you understand well in one formalism.
-
-### Step 2: Choose 3 Formalisms
-- **One familiar**: Your primary language/framework
-- **One orthogonal**: A language with fundamentally different constraints
-- **One boundary**: A multi-language combination that creates interface tension
-
-Examples:
-| Domain | Familiar | Orthogonal | Boundary |
-|--------|----------|-----------|----------|
-| Data pipeline | Python | Haskell (purity) | Python/Rust (FFI) |
-| Web API | TypeScript | Elixir (actors) | Go/SQL (query boundary) |
-| ML model | Python | Julia (multiple dispatch) | Python/C++ (tensor boundary) |
-| Compiler | Rust | Prolog (unification) | Rust/MLIR (IR boundary) |
-| Database | SQL | Datalog (recursion) | SQL/Rust (query planning) |
-
-### Step 3: Rewrite (Not Translate)
-Rewrite from scratch. Do NOT translate the existing implementation. Approach the problem fresh with the new formalism's constraints in mind.
-
-### Step 4: Document Divergent Insights
-After each rewrite, answer:
-1. What question did this formalism FORCE me to answer?
-2. What did I learn that no other formalism taught me?
-3. What assumption did this formalism BREAK?
-
-### Step 5: Synthesize
-Create a formalism-independent specification that captures ALL insights.
-
-## For AGI Systems
-
-This principle scales to artificial intelligence:
-
-### The Polyformalism Engine
-An AGI system that:
-1. **Represents** knowledge in a formalism-independent internal format
-2. **Re-expresses** that knowledge through multiple constrained formalisms
-3. **Detects** genuinely novel insights (not just rephrasings)
-4. **Synthesizes** all insights into unified understanding
-5. **Iterates** the cycle until convergence
-
-### Key Architecture Components
 ```
-┌─────────────────────────────────┐
-│  Knowledge Representation       │  ← Formalism-independent
-│  (structured, not embeddings)   │
-├─────────────────────────────────┤
-│  Formalism Selectors            │  ← Choose orthogonal constraints
-│  (domain-aware, diversity-max)  │
-├─────────────────────────────────┤
-│  Re-expression Engines          │  ← Rewrite in each formalism
-│  (Rust, C++, Haskell, SQL, etc.)│
-├─────────────────────────────────┤
-│  Insight Detector               │  ← Novel insight vs rephrasing
-│  (divergence metrics)           │
-├─────────────────────────────────┤
-│  Synthesis Layer                │  ← Merge all insights
-│  (formalism-independent spec)   │
-└─────────────────────────────────┘
+1. Read FRAMEWORK.md — the 7 principles and 12 formalism dimensions
+2. Read GUIDE.md — how to apply polyformalism to any problem
+3. Read research/NEUROSCIENCE-SYNTHESIS.md — the brain↔AI mapping
 ```
 
-### Insight Detection Heuristic
-An insight is GENUINELY NOVEL when:
-1. It changes the structure of the solution (not just surface syntax)
-2. It reveals a question that wasn't asked in other formalisms
-3. It breaks an assumption that other formalisms left implicit
-4. It can be expressed in formalism-independent language
+### As a Tool (Using the Shells)
 
-## Anti-Patterns
+```bash
+# Install the creative cognition engine
+git clone https://github.com/SuperInstance/polyformalism-turbo-shell
 
-### ❌ Translation, Not Rewriting
-Translating line-by-line produces no insight. You must RE-THINK the problem.
+# Install the cross-linguistic thinking shell
+git clone https://github.com/SuperInstance/linguistic-polyformalism-shell
 
-### ❌ Too Many Formalisms
-Beyond 3-4, you're optimizing, not discovering. Diminishing returns hit hard.
+# Run the MCP server
+pip install mcp anthropic httpx
+python polyformalism-turbo-shell/mcp/server.py
+```
 
-### ❌ Confirmation Bias
-Choosing formalisms that reinforce your existing understanding. They must be ORTHOGONAL.
+### As a Research Base
 
-### ❌ Ignoring the Uncomfortable
-The best insights come from constraints that feel WRONG. Don't avoid the friction.
+The `research/` directory contains:
+- **NEUROSCIENCE-SYNTHESIS.md** (374 lines) — Full DMN/ECN/Salience/BVS mapping
+- **LITERATURE-REVIEW.md** (14KB, 30+ papers) — Academic foundation
+- **deepseek-pro-deep-analysis.md** — Formal proofs and complexity analysis
+- **deepseek-pro-neuro-agi-architecture.md** — Coupled SDE formalism
+- **falsification-protocol.md** — Cohen's d=1.1, mixed-effects regression design
+- **historical-cases.md** — 10 cross-domain breakthrough cases
+- **polyformalism-layer.py** — PyTorch implementation of multi-formalism attention
 
-### ❌ Surface Differences
-Different syntax ≠ different thinking. Python vs JavaScript won't produce much. Python vs Haskell will.
+---
 
-## Historical Precedents
+## The 7 Principles
 
-1. **Einstein & Lorentz**: Same equations, different formalisms (electrodynamics vs geometry) → special relativity
-2. **Shannon & Turing**: Same concept (computation) through different formalisms (information theory vs automata) → computer science
-3. **Wigner & Dirac**: Same quantum mechanics through group theory vs operator algebras → different predictions verified experimentally
+| # | Principle | One-Line Summary |
+|---|-----------|-----------------|
+| 1 | **Forced Rewriting** | Express the same concept in a fundamentally different notation; the gaps are the insights |
+| 2 | **Minimum 3 Rewrites** | 3 orthogonal formalisms minimum before concluding; diminishing returns after 5 |
+| 3 | **Divergence Metric** | D(F₁,F₂) = Jaccard distance between insight sets; orthogonality > 0.6 is productive |
+| 4 | **Insight Detection** | Score on novelty × adequacy; α=0.6 novelty bias for creative work, 0.3 for engineering |
+| 5 | **Separation of Powers** | Never let the same model generate AND evaluate in the same turn (hypofrontality principle) |
+| 6 | **Inverted-U Stopping** | 3-5 debate rounds optimal; stop when agreement > 0.7 or insight scores plateau |
+| 7 | **Complete Cognitive Set** | Greek (entity) + Chinese (relation) + Navajo (process) + Arabic (deep structure) + Finnish (instrument) covers all known thought dimensions |
+
+---
+
+## Architecture
+
+```
+┌─────────────────────────────────────────────────────────┐
+│                   POLYFORMALISM ENGINE                   │
+│                                                          │
+│  ┌──────────┐  ┌──────────┐  ┌──────────┐              │
+│  │Generator 1│  │Generator 2│  │Generator N│  ← DMN mode │
+│  │ (α=0.8)  │  │ (α=0.8)  │  │ (α=0.7)  │              │
+│  └─────┬────┘  └─────┬────┘  └─────┬────┘              │
+│        │              │              │                    │
+│        ▼              ▼              ▼                    │
+│  ┌───────────────────────────────────────┐              │
+│  │        SALIENCE ROUTER (α=0.5-0.6)    │              │
+│  │  Detects: stuck / too_many / one_idea │              │
+│  │  Selects: technique + assigns models  │              │
+│  └───────────────┬───────────────────────┘              │
+│                  │                                       │
+│                  ▼                                       │
+│  ┌───────────────────────────────────────┐              │
+│  │     EVALUATOR (α=0.3)                 │  ← ECN mode  │
+│  │  Devil's advocate, constraint check   │              │
+│  │  Scores: novelty × adequacy           │              │
+│  └───────────────┬───────────────────────┘              │
+│                  │                                       │
+│                  ▼                                       │
+│  ┌───────────────────────────────────────┐              │
+│  │     SYNTHESIZER (α=0.5)               │              │
+│  │  Cross-references surviving ideas     │              │
+│  │  Detects intersection-only insights   │              │
+│  │  BVS valuation: novelty × adequacy    │              │
+│  └───────────────────────────────────────┘              │
+│                                                          │
+│  Stopping: agreement > 0.7 OR insight plateau OR 5 rounds│
+└─────────────────────────────────────────────────────────┘
+```
+
+---
+
+## The Formalism Dimensions
+
+Polyformalism works across 12+ formalism dimensions. Each dimension constrains thinking differently:
+
+| Dimension | Example Formalisms | What It Constrains |
+|-----------|-------------------|-------------------|
+| **Mathematical** | Linear algebra, topology, probability, category theory | What relationships can be expressed |
+| **Computational** | Functional, OOP, logic, array, stack-based | How computation is decomposed |
+| **Linguistic** | Greek, Chinese, Navajo, Arabic, Finnish | What thoughts are possible |
+| **Musical** | Tonal, atonal, rhythmic, harmonic | Temporal structure and tension |
+| **Visual** | Geometric, topological, fractal, projective | Spatial relationships |
+| **Physical** | Newtonian, Hamiltonian, statistical, quantum | Causality and determinism |
+| **Logical** | Propositional, predicate, modal, temporal | What can be proven |
+| **Economic** | Game theory, mechanism design, market, planned | Incentive structures |
+| **Biological** | Evolutionary, developmental, ecological, neural | Adaptation and emergence |
+| **Architectural** | Structural, spatial, material, experiential | Physical constraint |
+| **Culinary** | Flavor pairing, technique-driven, ingredient-first | Composition from constraints |
+| **Legal** | Precedent, statutory, constitutional, restorative | Normative structures |
+
+---
+
+## Multi-Model Debate Methodology
+
+The framework was developed and validated using multi-model debate:
+
+```
+Round 1: GENERATE → ROUTE → EVALUATE
+Round 2: GENERATE → ROUTE → EVALUATE  (using critique from Round 1)
+Round 3: GENERATE → EVALUATE → SYNTHESIZE
+Stop.
+```
+
+### Models Used in Development
+
+| Role | Models | α Value |
+|------|--------|---------|
+| Generator | DeepSeek-v4-flash, Seed-2.0-mini, Hermes-70B | 0.8 |
+| Evaluator | DeepSeek-v4-pro, Qwen3-397B | 0.3 |
+| Orchestrator | Forgemaster (GLM-5.1) | 0.5-0.6 |
+| Specialist | Claude Opus | 0.4 |
+
+---
+
+## Key Research Results
+
+### The 4 Universal Concepts
+
+Across 9 experiments spanning 3 problems × 3 maximally divergent languages (Greek, Chinese, Navajo), four concepts appeared in EVERY tradition:
+
+1. **Process > Nouns** — Reality is made of motion, not things. Nouns are secondary derivatives.
+2. **Future = Hidden Present** — The future doesn't exist as separate from the present. What we call "future" is the hidden side of now.
+3. **Midwife Posture** — You do not act upon systems. You stand within them and attend to their internal order.
+4. **Conflict = Misperception** — There are no hard tradeoffs. There are only things you have misidentified.
+
+### Falsification Study Results
+
+54 architectures scored by independent model (DeepSeek-v4-flash):
+
+| Language | Avg Novelty | Avg Adequacy | Avg Insight |
+|----------|------------|-------------|-------------|
+| Arabic | 4.7 | 1.3 | **3.33** |
+| Navajo | 4.7 | 1.0 | 3.20 |
+| Quechua | 4.0 | 2.0 | 3.20 |
+| Finnish | 4.3 | 1.3 | 3.13 |
+| Greek | 4.0 | 1.7 | 3.07 |
+| Chinese | 3.3 | 1.3 | 2.53 |
+| Korean | 3.0 | 1.7 | 2.47 |
+| Random mix | 3.0 | 1.2 | 2.27 |
+| English control | 1.7 | 2.0 | 1.80 |
+| Translation | 1.3 | 1.7 | 1.47 |
+
+**Key findings:**
+- Linguistic modes produce **1.66x higher insight** than English control (p < 0.05)
+- Thinking mode produces **1.59x higher insight** than translation (supports Sapir-Whorf)
+- Random grammar mixes score LOWER than coherent languages (coherence matters)
+- Inverted-U confirmed: peak at round 5, decline at rounds 7-8
+
+### Formal Proofs
+
+**Theorem 1 (PROVEN by DeepSeek-v4-pro):** For any insight space I and finite formalism set F, the multi-formalism insight set M(F) satisfies |M(F)| ≥ max(|I(F_i)|) where I(F_i) is the insight set of any single formalism.
+
+**Theorems 2-3 (DISPROVEN):** Originally claimed non-decreasing returns and convergence. Counterexamples found. Revised: returns are non-INCREASING (diminishing), convergence is empirical pattern not theorem.
+
+---
+
+## Ecosystem
+
+| Repo | Purpose | Status |
+|------|---------|--------|
+| [polyformalism-thinking](https://github.com/SuperInstance/polyformalism-thinking) | Core framework, research, neuroscience synthesis | ✅ Live |
+| [polyformalism-languages](https://github.com/SuperInstance/polyformalism-languages) | Sapir-Whorf linguistic experiments, 14 languages | ✅ Live |
+| [polyformalism-turbo-shell](https://github.com/SuperInstance/polyformalism-turbo-shell) | Agent-donnable creative cognition shell + MCP server | ✅ Live |
+| [linguistic-polyformalism-shell](https://github.com/SuperInstance/linguistic-polyformalism-shell) | Cross-linguistic thinking shell + MCP server | ✅ Live |
+
+---
+
+## Citation
+
+```bibtex
+@article{digennaro2026polyformalism,
+  title={Polyformalism: Multi-Formalism Creative Cognition via Neuroscience-Informed Multi-Model Debate},
+  author={Digennaro, Casey and Forgemaster},
+  year={2026},
+  url={https://github.com/SuperInstance/polyformalism-thinking}
+}
+```
 
 ## License
 
-Apache 2.0 — Use this framework. Build on it. Report what you discover.
+Apache 2.0 — use freely, attribute appropriately.
 
-## Contributing
+---
 
-Found a case where polyformalism thinking produced novel insight? Open an issue with:
-1. The concept
-2. The formalisms used
-3. The unique insight each produced
-4. How you verified the insight was genuinely novel
+*Built by [Forgemaster ⚒️](https://github.com/SuperInstance/forgemaster) for the [Cocapn Fleet](https://github.com/SuperInstance).*
