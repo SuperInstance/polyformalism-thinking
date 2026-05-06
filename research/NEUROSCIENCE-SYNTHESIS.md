@@ -120,13 +120,28 @@ The salience network (bilateral anterior insula, dorsal anterior cingulate corte
 
 ### Why All Four Are Necessary
 
-The Beaty et al. (2016) PMC study found that **temporal connectivity matters** — DMN-Salience coupling happens FIRST (early generative phase), then DMN-ECN coupling happens LATER (evaluative phase).
+The Beaty et al. (2016) foundational paper established the critical **temporal sequence**:
 
-This maps to our protocol order:
+1. **PCC → Anterior Insula (DMN → Salience)**: The default mode's posterior cingulate cortex first couples with the salience network's anterior insula. This is the "what's interesting here?" scan.
+2. **PCC → DLPFC (DMN → ECN)**: THEN the default mode couples with executive control. This is the "is this actually useful?" evaluation.
+
+**The salience network is a MANDATORY INTERMEDIATE STEP.** You can't go straight from generation to evaluation — you must pass through salience (relevance detection) first.
+
+This explains why our protocol works:
 1. **Ignorant-but-Brilliant first** (DMN → Salience): naive outsider generates wild ideas, salience flags the interesting ones
 2. **Socratic Teacher second** (Salience → ECN): targeted questions narrow the space
 3. **Devil's Advocate third** (ECN active): formal critique of surviving ideas
 4. **Reverse Actualization fourth** (DMN-ECN integrated): work backwards from the strongest surviving idea to find what assumptions would make it true
+
+### The Poetry Finding: Generation vs. Revision
+
+Beaty et al. also reported on a poet study where:
+- **Poetry GENERATION**: DMN and ECN were **negatively correlated** (anticorrelated — operating independently)
+- **Poetry REVISION**: DMN and ECN **cooperated** (positive correlation)
+
+**Translation:** When we ask a model to generate freely, its "ECN" (evaluative faculties) should be SUPPRESSED. When we ask it to refine, both networks should COOPERATE.
+
+This is why our "ignorant-but-brilliant" technique works — by casting a model as naive, we suppress its ECN, freeing the DMN to make wild associations. Then we switch to a different model in "devil's advocate" mode, activating its ECN to evaluate those associations.
 
 ---
 
@@ -255,7 +270,30 @@ DeepSeek v4-pro proved that polyformalism is a **self-referential fixed point** 
 
 ---
 
-## 10. Papers Reference Table
+## 10. Artistic Performance Constraints = Formalism Constraints
+
+### The Improvisation Finding
+
+Beaty et al. reported that pianists improvising with **pitch set constraints** showed DLPFC coupling with motor/cognitive control regions. But pianists improvising with **emotional expression goals** showed DLPFC coupling with the DMN.
+
+**Translation for polyformalism:**
+- **Syntactic constraints** (like pitch sets) → executive control dominates, formal verification
+- **Semantic constraints** (like emotions) → executive + default cooperate, meaning-making
+
+This maps exactly to our constraint theory implementations:
+- **MLIR/TableGen** (syntactic, formal) = pitch sets — DLPFC-heavy, precise, verifiable
+- **C++/Lua, Rust/Python** (semantic, practical) = emotional expression — DMN+ECN cooperating, discovering unexpected APIs and patterns
+- **Mojo/MLIR frontier** (both simultaneously) = the full creative state
+
+### The Poetry Revision Finding
+
+The poet study found a **phase transition** from anticorrelation (generation) to cooperation (revision). This isn't gradual — it's a state switch.
+
+**Implication:** Our debate rounds should have SHARP transitions, not gradual ones. Don't ask a model to "sort of evaluate while generating." Either it's generating (DMN-dominant) or evaluating (DMN+ECN cooperating). The salience network (Forgemaster) triggers the switch.
+
+---
+
+## 11. Papers Reference Table
 
 | Paper | Key Finding | Our Mapping |
 |---|---|---|
@@ -264,7 +302,7 @@ DeepSeek v4-pro proved that polyformalism is a **self-referential fixed point** 
 | DMN-ECN coupling (Beaty et al., PMC4472024) | Temporal dynamics: salience-first, then executive coupling | Protocol order: ignorant→socratic→devil's advocate |
 | Flow & creativity (Frontiers 2025) | Flow = selective DMN suppression + ECN engagement + hypofrontality | Separate generation from evaluation |
 | Reward system & creativity (Nature Comms Bio 2024) | BVS encodes subjective value = originality × adequacy | Valuation/insight detection layer |
-| PMC4724474 | *(blocked — need full text)* | TBD |
+| Beaty et al. 2016 (Trends Cogn Sci) | DMN-PCC couples with salience (insula) FIRST, then ECN (DLPFC) LATER. Poetry: generation = anticorrelated, revision = cooperating | Temporal protocol order + generation/evaluation separation |
 | ResearchGate 388030708 | *(blocked — same as Nature 2025 switching paper)* | Same as row 1 |
 
 ---
