@@ -1,0 +1,23 @@
+{
+  "exp1": {
+    "correlation": -0.045210772047984696,
+    "accuracy": 0.44,
+    "verdict": "NOT SUPPORTED"
+  },
+  "exp2": {
+    "convergence_rate": 1.0,
+    "verdict": "SUPPORTED"
+  },
+  "exp3": {
+    "accuracy": 1.0,
+    "verdict": "SUPPORTED"
+  },
+  "exp4": {
+    "avg_p48_drift": 0.8950901282415537,
+    "avg_f32_drift": 1.8080231408091338,
+    "verdict": "PARTIALLY SUPPORTED"
+  },
+  "exp5": {
+    "verdict": "NEEDS INVESTIGATION"
+  }
+}
