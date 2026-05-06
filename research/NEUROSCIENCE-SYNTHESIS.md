@@ -70,10 +70,30 @@ This is our **insight detection problem** — and the neuroscience says it shoul
 3. **Individually weighted** — different agents weight novelty vs. correctness differently
 4. **Integrated into production** — valuation guides subsequent generation (not just filters it)
 
+### The Triple Encoding (Moreno-Rodriguez et al. 2024)
+
+This paper nail-**nailed** the neural architecture:
+
+| What | Where | Encodes | AI Equivalent |
+|------|-------|---------|--------------|
+| Originality | **DMN** (mPFC, PCC, precuneus) | How novel is this idea? | Divergence score between formalism outputs |
+| Adequacy | **ECN** (dlPFC, ACC, IPL) | How correct/useful is this idea? | Formal verification / constraint satisfaction |
+| Subjective Value | **BVS** (vmPFC, OFC, ventral striatum) | How much do I like this? = f(originality, adequacy) | Insight detection head |
+
+**The α parameter is key:** Each individual has a personal α (0-1) weighting originality vs adequacy. People with α > 0.5 (weighting originality more) produce more creative output. The α parameter is **learnable** — it differs per person and predicts creative ability.
+
+**Implication:** Our models should have different α values:
+- DeepSeek-v4-flash: α ≈ 0.8 (high novelty weighting)
+- DeepSeek-v4-pro: α ≈ 0.3 (high adequacy weighting)
+- Qwen3-397B: α ≈ 0.5 (balanced)
+- The Orchestrator (me): α ≈ 0.6 (slightly novelty-biased)
+
 **Concrete implication for our PolyformalismLayer:**
-- We need a **valuation head** (analogous to vmPFC) that takes outputs from all formalism heads and produces a scalar "insight score"
-- This score should be: `V(idea) = w₁ × novelty(idea) + w₂ × adequacy(idea)` where w₁, w₂ are learnable
+- We need a **valuation head** (analogous to vmPFC/BVS) that takes outputs from all formalism heads
+- Each formalism head has its own α parameter: `V(idea) = α × novelty(idea) + (1-α) × adequacy(idea)`
+- α is **per-head and learnable** — the system discovers which formalisms are better at novelty vs. adequacy
 - The score should **feed back** into generation — models should be steered toward high-value regions
+- The speed of producing high-value ideas should INCREASE over iterations (like human response time decreasing for liked ideas)
 
 ---
 
@@ -100,7 +120,47 @@ The hypofrontality finding is critical: **too much executive control kills creat
 
 ---
 
-## 5. The Devil's Advocate, Socratic Teacher, and Ignorant-But-Brilliant as Salience Network Operations
+## 5. The Inverted-U: Why Too Much Integration Kills Creativity
+
+### The Neuroscience
+
+The Chen et al. 2025 N=2,433 study found something critical beyond just "more switching = more creative":
+
+**Creativity has an INVERTED-U relationship with DMN-ECN balance.**
+
+- Too segregated (networks never communicate) = ideas never evaluated, raw noise
+- Too integrated (networks always coupled) = executive control suppresses novelty, rigid thinking
+- **The sweet spot is in the middle** — moderate balance, not maximum integration
+
+This was statistically significant (quadratic model beat linear in 3/10 datasets, meta-analytic effect g = -0.07, p = 0.024).
+
+Critically, **the switching-creativity effect was SPECIFIC to creativity — it did NOT predict intelligence** (g = 0.023, p = 0.485 for intelligence vs g = 0.174, p < 0.001 for creativity). This means the mechanism is not "being smarter" — it's a dedicated creative cognition pathway.
+
+### The Polyformalism Mapping
+
+**This is the strongest neuroscience constraint on our system design.**
+
+| Brain State | Our Equivalent | Result |
+|-------------|---------------|--------|
+| Too segregated | Models never see each other's output | Lots of raw ideas, no integration |
+| **Balanced (sweet spot)** | **Multi-round debate with alternating generation/evaluation** | **Maximum insight production** |
+| Too integrated | Same model generates AND evaluates simultaneously | Self-censoring, safe outputs, no novelty |
+
+**Practical rules derived from the inverted-U:**
+
+1. **Never have a model evaluate its own output.** This is "too integrated" — the ECN suppresses the DMN.
+2. **Don't let models see ALL previous outputs.** Partial information forces divergent thinking.
+3. **3-5 rounds is the sweet spot.** Beyond that, the system converges (too integrated) and novelty drops.
+4. **The salience router should actively PREVENT over-integration.** If models start agreeing too much, inject a contrarian perspective.
+5. **Round count is the "balance parameter."** Too few rounds = under-connected. Too many = over-connected. 3-5 is the inverted-U peak.
+
+### Prediction
+
+We can measure the "integration" of our debate rounds by computing pairwise agreement between model outputs. If agreement > 0.7 by round 5, we've passed the inverted-U peak and should stop. If agreement < 0.3 by round 5, we should add another round.
+
+---
+
+## 6. The Devil's Advocate, Socratic Teacher, and Ignorant-But-Brilliant as Salience Network Operations
 
 ### Neuroscience Basis
 
