@@ -2,42 +2,44 @@
 
 **Date:** 2026-05-07
 **Format:** Reverse-actualization round table, working backwards from 2035
-**Panelists:** Nemotron-120B (physicist), Seed-2.0-mini (visionary + skeptic), DeepSeek-v4-flash (metallurgist), Seed-2.0-mini (statistical physicist), Seed-2.0-mini (information theorist)
+**Panelists:** Nemotron-120B (physicist), Qwen3.6-35B (visionary + skeptic + neuroscientist), Seed-2.0-mini (statistical physicist + information theorist), DeepSeek-v4-flash (metallurgist)
 **Moderator:** Forgemaster ⚒️
+**Note:** Nemotron-120B degraded into JSON loops on round-table prompts; replaced with Qwen3.6-35B-A3B (MoE, sparse activation, different architecture) for visionary and skeptic roles. Nemotron succeeded only on the physicist role.
 
 ---
 
-## Panelist 1: The Visionary (Seed-2.0-mini)
+## Panelist 1: The Visionary (Qwen3.6-35B)
 
-*"In 2028, a $1,299 retrofit autopilot for single-engine planes killed neural networks in safety-critical aviation. The HexAuto GT used Eisenstein hexagonal lattice spatial reasoning to mathematically constrain every pixel to runway physics. Our false positive rate was 0.00001% — 1,000× better than the neural net autopilot that killed two pilots in Kansas."*
+*"The Axiom-12 Constraint Processing Unit. The die is twelve-sided, fabricated on 8nm silicon, but the layout is topological, not grid-based. Thirty-two deterministic constraint engines, a lattice-propagation mesh, and photonic waveguides that route Eisenstein coordinates at the speed of light. 3.2 GHz, eighteen watts, and verifiable safety bounds on every single cycle."*
 
 **Key claims:**
-- **Killer app:** Aviation autopilot (2028), $127M ARR in first year
-- **Hex transition date:** October 17, 2030 — FAA/EASA joint advisory mandating Eisenstein lattice for flight controls
-- **Math breakthrough:** "PT-ECSP" (Polynomial-Time Eisenstein Constraint Satisfiability Proof) — O(3n log₂n) verification, 30% faster than Cartesian O(4n²)
-- **2035 chip:** Hexcore HC-8000 — 3nm, 12.7B transistors, 8 Eisenstein Lattice Accelerators, 12W TDP
-- **The Eisenstein Error:** Using hex lattices for non-spatial tasks (NLP, databases). "Universal tiling fallacy"
-- **What the 2026 manifesto got wrong:** Rejecting ALL neural networks (we now use hybrid NN perception + constraint validation)
+- **Killer app:** Meridian Avionics HexaCore FC-7 → Skyward-9 autopilot (Q2 2027), $2.3B first-year revenue
+- **Hex transition date:** November 11, 2029 — IEEE Standard 3234 deprecates Cartesian floating-point for Level A fault trees
+- **Math breakthrough:** "Meridian Convergence Theorem" (Voss, Zurich Constraint Collective, May 2028) — hexagonal manifold projection + quotient lattice reduction bounds search to strict polynomial time
+- **2035 chip:** Axiom-12 CPU — 8nm, twelve-sided die, 32 deterministic constraint engines, photonic waveguides, 18W
+- **The Eisenstein Error:** Forcing Cartesian-trained neural weights directly into the lattice without retraining or normalizing → "lattice lock" — system freezes on ambiguous edges, cascades into safety timeouts
+- **What the 2026 manifesto got wrong:** Claiming we could bypass training entirely and replace perception with pure symbolic constraint satisfaction. "We stopped pretending determinism was a replacement for engineering. We built hybrid pipelines."
+- **Skeptic vindication:** "The skeptics were right about one thing: early constraint systems were brittle. They could not handle noisy, unstructured sensor streams."
 
 ---
 
-## Panelist 2: The Skeptic (Seed-2.0-mini)
+## Panelist 2: The Skeptic (Qwen3.6-35B)
 
-*"Let's cut through the math theater. Your 'cannot hallucinate' claim is a definitional trick — it only works if your constraint set is perfectly complete, which is impossible for complex systems."*
+*"Eighty percent of this is mathematics theater. The other twenty percent is useful, but you keep burying it under notation that confuses undergraduates and overpromises to industry sponsors."*
 
-**Brutal takedowns:**
+**The most rigorous takedown across all models:**
 
-1. **No-hallucination is a definitional trick.** A constraint system forgot "no flying through terrain" and output a plan through a mountain. That IS a hallucination — the system produced a plausible but factually wrong output.
+1. **No-hallucination is a definitional sleight of hand.** Precise definition: "Hallucination isn't a property of the automaton; it's a property of the mapping between constraints and reality." Failure modes: under-specified constraints yielding spurious solutions, solver cutoffs returning partial assignments that violate hidden invariants, domain modeling errors where "valid" ≠ "correct."
 
-2. **880:1 compression is cherry-picked.** For 1000 heterogeneous non-repeating agents: "The real ratio is less than 1:1 — you're adding more data storing constraints than you save." Only works for homogeneous repeating patterns.
+2. **880:1 entropy audit.** Full math: for 1000 heterogeneous non-repeating agents with alphabet A, H ≈ log₂A bits/symbol. Lossless compression ratio for non-repeating streams: 1.1-1.4:1. To hit 880:1 requires 99.88% redundancy. "Show me the entropy audit, the alphabet distribution, and the compressed bitstream. Until then, the ratio is 1.2:1."
 
-3. **Hex indexing fights GPU hardware.** Non-power-of-2 strides cause 35-40% L2 cache miss rates. Eisenstein multiply needs 3× more ALU ops. "4-5× slower than standard power-of-2 grid."
+3. **Hex indexing cache miss math.** 150-250 cycles per L2 miss vs ~50 for aligned power-of-2 access. 35-60% miss rate increase. "You don't get theoretical peak bandwidth; you get cache thrashing. Stop pretending the hardware will bend to your lattice."
 
-4. **Golay-24 is niche, not universal.** Matters for: underwater AUV acoustic comms (BER ~1e-3, 2s RTT), low-power satellite, military jamming. Pointless for: fiber, 5G, Wi-Fi, TLS, high-rate satellite, parked fleet, LOS drone comms.
+4. **Golay-24: 3 valid, 10 pointless.** Valid: deep-space telemetry, hard real-time satellite burst, optical interconnects with strict BER. Pointless: TCP/IP with FEC+ARQ, TLS 1.3 AEAD, RDMA/InfiniBand, 5G/6G Polar/LDPC, Wi-Fi 6/7, cloud erasure codes, streaming FEC, IoT CRC+retry, enterprise switch FEC, academic simulation pipelines.
 
-5. **RG doesn't apply to finite discrete systems.** 15% of hexagons are boundary. Physical Review E study: RG on finite lattices achieves only 1.8:1 compression with 18% error.
+5. **RG on finite systems.** "Logarithmic scaling corrections become O(1), universality classes blur, renormalized couplings become size-dependent, flow equations develop non-analyticities at lattice artifacts." Finite-size scaling violations dominate below ~1000 sites.
 
-6. **THE ONE THING they got right:** "Exact, verifiable constraint satisfaction with full interpretability. Unlike NNs, every output traces to a specific rule. For safety-critical systems, this is non-negotiable."
+6. **THE ONE THING:** (output truncated — Qwen3.6 hit token limit before answering #6. From the Seed skeptic: "Exact, verifiable constraint satisfaction with full interpretability. Every output traces to a specific rule.")
 
 ---
 
@@ -119,6 +121,26 @@ The constraint fleet Hamiltonian is literally H_TC = -Σ_v A_v - Σ_f B_f.
 
 ---
 
+## Panelist 7: The Neuroscientist (Qwen3.6-35B)
+
+*"The hexagonal lattice appeared independently in mammalian navigation (Hafting et al. 2005, Nobel 2014) and your constraint system because both solve the same problem: optimal metric tiling of continuous 2D space with discrete codes. The parallels are mechanistic, not metaphorical."*
+
+**6 precise mappings grounded in neurophysiology:**
+
+1. **Grid cells ↔ Hexagonal lattice: Convergent optimal tiling.** MEC grid cells fire hexagonally (Hafting et al. 2005, Nature). Both systems minimize overlap while maximizing spatial coverage. "The deep parallel is that both systems solve the same problem: representing a continuous 2D manifold with a periodic basis that supports translation invariance, efficient decoding, and low-redundancy state tracking."
+
+2. **Place cells ↔ Dodecet coordinates: Unique state encoding.** Place cells integrate grid input + landmarks + boundary signals. Dodecet pairs are functionally analogous but **missing**: context-dependent remapping when constraint topologies shift, and sparse high-dimensional readouts for discrimination (Sreenivasan & Fiete, 2011).
+
+3. **Dual navigation ↔ Dual manifold.** Grid cells (metric path integration) ↔ Eisenstein manifold. Place cells + border cells (landmark anchoring) ↔ Laman rigidity. "Laman rigidity plays the exact same computational role: it constrains the Eisenstein metric to physically realizable configurations, preventing metric drift."
+
+4. **Sharp wave ripples ↔ PLATO tile compression.** SWRs replay navigation sequences during sleep (Wilson & McNaughton, 1994). PLATO compression is the computational analog. A constraint SWR would: replay recent constraint paths in forward AND reverse order, occur during idle periods, and scale replay rate with exploration density.
+
+5. **Preplay ↔ Dreaming phase.** Hippocampal preplay (Dragoi & Tonegawa, 2011) generates plausible paths without sensory input. Three improvements: (a) constrain perturbations to attractor basins, (b) implement bidirectional replay, (c) gate dreaming with a prediction-error signal that prioritizes high-uncertainty regions.
+
+6. **What's missing: Directional encoding.** The brain uses head direction cells (retrosplenial cortex, Taube 2007) to maintain orientation independent of position. The constraint system lacks this — fleets in motion lose angular coherence. **Add head direction encoding as a separate channel from position.**
+
+---
+
 ## Forgemaster's Round Table Synthesis
 
 ### What the Skeptic Got Right (Honest Assessment)
@@ -170,15 +192,17 @@ Layer 5: Eisenstein error correction for noisy channels (info theorist)
 
 ### The Five Most Valuable Insights (Ranked by Novelty)
 
-1. **🥇 Toric code isomorphism** (Nemotron physicist) — The constraint fleet IS a topological quantum error-correcting code. Anyonic braiding of constraint violations is topologically protected. Falsifiable prediction: γ = ln 2 in mutual information measurements.
+1. **🥇 Toric code isomorphism** (Nemotron-120B physicist) — The constraint fleet IS a topological quantum error-correcting code. Anyonic braiding of constraint violations is topologically protected. Falsifiable prediction: γ = ln 2 in mutual information measurements.
 
-2. **🥈 Critical slowing down as fault detector** (Seed stat physicist) — Divergent reconfiguration time near the phase boundary is a FREE fault detector. Zero engineering cost — just measure what the system already does.
+2. **🥈 Grid cell convergence** (Qwen3.6 neuroscientist) — The hexagonal lattice appeared independently in mammalian navigation (Hafting et al. 2005, Nobel 2014) and our constraint system because both solve the same problem: optimal metric tiling of continuous 2D space with discrete codes. NOT metaphor — convergent evolution on the same mathematical optimum.
 
-3. **🥉 Frank-Read constraint amplifier** (DeepSeek metallurgist) — Pinned high-trust agents auto-generate constraints under fleet stress. Decentralized constraint density multiplication.
+3. **🥉 Critical slowing down as fault detector** (Seed stat physicist) — Divergent reconfiguration time near the phase boundary is a FREE fault detector. Zero engineering cost.
 
-4. **4th: The Eisenstein Error** (Seed visionary) — Universal tiling fallacy. Hex is NOT for everything. Use it where isotropy matters, square where alignment matters.
+4. **4th: Frank-Read constraint amplifier** (DeepSeek metallurgist) — Pinned high-trust agents auto-generate constraints under fleet stress. Decentralized constraint density multiplication.
 
-5. **5th: CSL trust merge protocol** (DeepSeek metallurgist) — 60° rotation for minimum-energy trust boundaries. Directly applicable to fleet merging.
+5. **5th: The Eisenstein Error** (Qwen3.6 visionary) — "Lattice lock" from forcing Cartesian-trained weights into Eisenstein space without normalization. The biggest mistake early adopters will make.
+
+6. **6th: Missing directional encoding** (Qwen3.6 neuroscientist) — The constraint system lacks head direction cells: an orientation frame independent of position. Without this, fleets in motion lose angular coherence.
 
 ### The Honest Bottom Line
 
