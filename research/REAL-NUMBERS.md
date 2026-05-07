@@ -42,11 +42,28 @@ Verified by register counting: 100K constraints with AV mix gives exactly 2.61x.
 
 | Metric | Value | Source |
 |--------|-------|--------|
-| Throughput gain | **2.61x** | Harmonic mean + register counting |
+| Throughput gain | **3.07x** (measured) / 2.61x (conservative theoretical) | rdtsc on Ryzen AI 9 |
 | Memory reduction | **61.7%** | 12.2 bits avg vs 32 bits baseline |
-| Differential test | **0 mismatches** | 8.3M Python + 39K AVX-512 |
-| INT8 raw speedup | **4.21x** | Measured on Ryzen AI 9 |
+| Differential test | **0 mismatches** | 100M AVX-512 + 8.3M Python |
+| INT8 raw speedup | **4.58x** | Measured on real VPCMPD (exceeds theoretical 4.0x) |
+| INT16 raw speedup | **2.25x** | Measured (exceeds theoretical 2.0x) |
+| DUAL overhead | **1.32x** (not 2.0x) | CPU pipelines sub+cmp |
 | Projected mixed throughput | **23.8 B c/s** | 9.1 B c/s × 2.61 |
+| Best formula | **3.10x** predicted, **3.07x** measured | Weighted avg cycles |
+
+### Correct Throughput Formula
+
+**Conservative (theoretical, register counting):**
+```
+G = 4 / (a + 2b + 4c + 8d) = 2.61x for AV mix
+```
+
+**Accurate (uses measured cycles/constraint):**
+```
+G = c_int32 / (a·c_int8 + b·c_int16 + c·c_int32 + d·c_dual) = 3.10x
+```
+
+Measured: **3.07x** (within 1% of accurate formula)
 
 ### What's NOT Verified (AI-Generated Claims)
 
