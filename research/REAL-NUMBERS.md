@@ -97,3 +97,18 @@ Measured: **3.07x** (within 1% of accurate formula)
 | AVX-512 C differential | 39,049 / 0 mismatches | ✅ |
 | Python exhaustive INT8 | 8,323,200 / 0 | ✅ |
 | Python statistical INT16 | 10,000,000 / 0 | ✅ |
+
+### SoA Layout Benchmark (5-run reproducibility)
+
+| Run | Speedup | Mismatches |
+|-----|---------|------------|
+| 1 | 3.09x | 0 |
+| 2 | 3.11x | 0 |
+| 3 | 3.52x | 0 |
+| 4 | 2.72x | 0 |
+| 5 | 3.41x | 0 |
+| **Mean** | **3.17x** | **0** |
+
+**Critical layout finding:** AoS (array-of-structs) = 0.42x (SLOWER than baseline due to scatter/gather). SoA (struct-of-arrays) = 3.17x. Layout matters MORE than algorithm. This is a known SIMD requirement, not a limitation of our approach.
+
+Source: `research/avx512_soa_benchmark.c` — reproducible on any AVX-512 CPU.
