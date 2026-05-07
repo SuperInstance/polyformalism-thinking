@@ -112,3 +112,32 @@ Measured: **3.07x** (within 1% of accurate formula)
 **Critical layout finding:** AoS (array-of-structs) = 0.42x (SLOWER than baseline due to scatter/gather). SoA (struct-of-arrays) = 3.17x. Layout matters MORE than algorithm. This is a known SIMD requirement, not a limitation of our approach.
 
 Source: `research/avx512_soa_benchmark.c` — reproducible on any AVX-512 CPU.
+
+### End-to-End Pipeline (Adversarial Testing, Round 1-3)
+
+**ONE-SHOT PIPELINE:**
+| Phase | Cycles/constraint | % total |
+|-------|-------------------|---------|
+| Pass 1: Classify | 6.33 | 29.5% |
+| Pass 2: SoA sort | 14.92 | 69.4% |
+| Phase 3: AVX-512 check | 0.24 | 1.1% |
+| **Total** | **21.49** | **0.14x vs scalar** |
+
+**REUSE SCENARIO (break-even analysis):**
+| Reuses | Speedup |
+|--------|---------|
+| 1 | 0.14x (DON'T USE) |
+| 10 | 1.23x |
+| 100 | 6.43x |
+| 1000 | 11.14x |
+| 10000 | 12.02x |
+
+**Break-even: 8 reuse iterations** — independently confirmed by Hermes-405B and measured.
+
+**Non-uniform threshold: 3.96x** — per-constraint bounds don't reduce speedup.
+**XOR dual-path: overflow-safe** — 6% faster than broken subtraction, zero disagreements.
+
+**Bugs found by adversarial testing:**
+1. INT8 overflow wrapping (4.9% mismatch) → fixed with range validation
+2. Dual-path subtraction overflow (3 edge cases) → fixed with XOR conversion
+3. SoA conversion dominates (98.9% of pipeline) → only wins with reuse ≥8
