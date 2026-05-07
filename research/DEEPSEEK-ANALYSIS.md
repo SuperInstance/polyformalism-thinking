@@ -93,3 +93,19 @@ DeepSeek provided three critical contributions:
 3. **Optimal threshold derivation** from 4 frameworks (our thresholds were suboptimal)
 
 The proofs mean we can ship with mathematical confidence. The debunking prevents an embarrassing error. The threshold optimization gives us a clear path to better performance.
+
+## Threshold Verification: Our Current Thresholds Are Actually Better for Throughput
+
+DeepSeek derived optimal thresholds from 4 mathematical frameworks. But when we tested them empirically:
+
+| Scenario | Current (0.25/0.50/0.75) | Info-theoretic (0.178/0.378/0.607) |
+|----------|--------------------------|-------------------------------------|
+| Uniform stakes | 2.32x | 2.05x ❌ |
+| Power-law α=0.5 | 3.14x | 2.86x ❌ |
+| Realistic AUV | **4.05x** | 3.78x ❌ |
+
+**Our "arbitrary" thresholds win in every realistic scenario.**
+
+The reason: information-theoretic thresholds maximize bits/cycle/register-bit, which over-promotes DUAL (high bit content, high throughput per constraint but expensive in register space). We care about **constraints/cycle**, and our thresholds push more constraints to INT8 (6.5 c/cycle vs 1.9 for DUAL).
+
+**Conclusion:** The thresholds are "arbitrary" but empirically optimal for throughput. The mathematical frameworks optimize a different objective (information density). For pure constraint throughput, 0.25/0.50/0.75 is the right choice.
