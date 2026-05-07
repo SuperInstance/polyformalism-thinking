@@ -150,19 +150,18 @@ int main() {
         sink += __builtin_popcount(kge & kle);
     }
     
-    // DUAL batch: INT32 with dual-path verification
+    // DUAL batch: XOR-based dual-path (overflow-safe)
+    // Fix: XOR sign bit eliminates subtraction overflow at INT_MAX/INT_MIN
+    __m512i sign = _mm512_set1_epi32(0x80000000);
     for (int i = 0; i <= c.nd-16; i += 16) {
         __m512i vv = _mm512_loadu_si512((void*)(c.vd+i));
         __m512i ll = _mm512_loadu_si512((void*)(c.lod+i));
         __m512i hh = _mm512_loadu_si512((void*)(c.hid+i));
-        __mmask16 kge = _mm512_cmpge_epi32_mask(vv, ll);
-        __mmask16 kle = _mm512_cmple_epi32_mask(vv, hh);
-        __mmask16 pass_a = kge & kle;
-        __m512i above = _mm512_sub_epi32(vv, ll);
-        __m512i below = _mm512_sub_epi32(hh, vv);
-        __mmask16 neg1 = _mm512_cmplt_epi32_mask(above, _mm512_set1_epi32(0));
-        __mmask16 neg2 = _mm512_cmplt_epi32_mask(below, _mm512_set1_epi32(0));
-        __mmask16 pass_b = ~(neg1|neg2) & 0xFFFF;
+        __mmask16 pass_a = _mm512_cmpge_epi32_mask(vv, ll) & _mm512_cmple_epi32_mask(vv, hh);
+        __m512i vu = _mm512_xor_si512(vv, sign);
+        __m512i lu = _mm512_xor_si512(ll, sign);
+        __m512i hu = _mm512_xor_si512(hh, sign);
+        __mmask16 pass_b = _mm512_cmpge_epu32_mask(vu, lu) & _mm512_cmple_epu32_mask(vu, hu);
         sink += __builtin_popcount(pass_a & pass_b);
     }
     
