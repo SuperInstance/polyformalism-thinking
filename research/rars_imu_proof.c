@@ -138,7 +138,7 @@ int main() {
     }
     
     printf("%-25s %8s %8s %10s %8s %s\n", "Category", "Value", "Lo", "Hi", "Stakes", "Precision");
-    printf("=".repeat(80) "\n");
+    puts("================================================================================");
     
     for (int i = 0; i < NUM_CONSTRAINTS && i < 30; i++) {
         const char* prec_str[] = {"INT8", "INT16", "INT32", "DUAL"};

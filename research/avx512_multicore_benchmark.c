@@ -19,6 +19,7 @@
 #include <unistd.h>
 #include <immintrin.h>
 #include <cpuid.h>
+#include <math.h>
 
 #define TOTAL_CONSTRAINTS  10000000  /* 10M */
 #define VEC_WIDTH          64        /* AVX-512 = 512 bits = 64 bytes */
@@ -86,7 +87,7 @@ static inline uint64_t rdtsc_start(void) {
 
 static inline uint64_t rdtsc_end(void) {
     unsigned int lo, hi;
-    __asm__ __volatile__ ("rdtscp" : "=a"(lo), "=d"(hi) ::: "rcx");
+    __asm__ __volatile__ ("rdtscp" : "=a"(lo), "=d"(hi) :: "rcx");
     __asm__ __volatile__ ("cpuid" ::: "rax", "rbx", "rcx", "rdx");
     return ((uint64_t)hi << 32) | lo;
 }
