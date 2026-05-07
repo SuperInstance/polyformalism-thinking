@@ -28,8 +28,8 @@ Square grids are the legacy of Cartesian convenience. In safety-critical domains
 `eisenstein` is engineered for environments where determinism and bounds are non-negotiable:
 
 *   **Exact Integer Math:** All operations are on fixed-width integers. No IEEE-754 surprises.
-*   **Bounded Norms:** The lattice norm **fits in 24 bits**, ensuring predictable memory usage and cache locality.
-*   **Compact Representation:** The `E12` type uses only **3 bytes** per coordinate, reducing memory footprint and bandwidth.
+*   **Bounded Norms:** The lattice norm fits in **26 bits** (max 50M for full signed 12-bit range), well within i32 range, ensuring predictable memory usage and cache locality.
+*   **Compact Representation:** The `E12` type uses **4 bytes (i32)** per coordinate, with the norm fitting comfortably in 26 bits — no overflow possible for the full 12-bit coordinate range.
 *   **`no_std` Compatible:** Run in bare-metal, kernels, or isolated enclaves. No allocator required.
 
 ---
@@ -39,7 +39,7 @@ Square grids are the legacy of Cartesian convenience. In safety-critical domains
 ```rust
 use eisenstein::{E12, HexDisk, EisensteinTriple};
 
-// Axial coordinate: 3-byte exact integer, zero drift guaranteed
+// Axial coordinate: i32 exact integer, zero drift guaranteed
 let p = E12::new(3, -2);
 
 // HexDisk provides fast containment checks

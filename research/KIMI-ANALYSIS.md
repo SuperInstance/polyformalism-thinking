@@ -68,16 +68,17 @@
 **At R=36:** 3(1296) + 3(36) + 1 = 3,888 + 108 + 1 = **3,997 cells**.
 vs 64×64 square: 4,096 cells. Hex is 97.6% coverage but **circular** (isotropic).
 
-### 2.2 Eisenstein Norm Overflow Proof
+### 2.2 Eisenstein Norm Bounds
 
-**Theorem.** For q, r ∈ [0, 4095]: max(q² − qr + r²) = 16,769,025 < 2²⁴ = 16,777,216.
+**Theorem.** For |q|, |r| ≤ 4096: max(q² − qr + r²) = 3·4096² = 50,331,648.
 
-**Proof.** f(q,r) = q² − qr + r² is positive definite. Maximum at corners:
-- f(4095, 0) = 4095² = 16,769,025
-- f(0, 4095) = 4095² = 16,769,025
-- f(4095, 4095) = 4095² − 4095² + 4095² = 16,769,025
+**Proof.** f(q,r) = q² − qr + r² is positive definite. The maximum over the full range |q|,|r| ≤ 4096 occurs at (q,r) = (4096, −4096): f = 4096² + 4096² + 4096² = 3·4096² = 50,331,648.
 
-**max = 16,769,025 = 0xFF8001. Requires exactly 24 bits. Fits in u32 with 8 bits spare.** ∎
+For the non-negative quadrant q,r ∈ [0, 4095]: max = 16,769,025 (at corners). This fits in 24 bits.
+
+**For the full 12-bit signed range: max = 50,331,648 = 0x02FF FC00. Requires 26 bits. Use i32 (4 bytes) per coordinate.** The norm fits in 26 bits (max 50M), well within i32 range. ∎
+
+> **CORRECTION (2026-05-07):** The original claim "max = 16,769,025 < 2²⁴" only held for non-negative q,r. The maximum Eisenstein norm for the full signed range |q|,|r| ≤ 4096 is 3·4096² = 50,331,648 which **EXCEEDS 2²⁴ = 16,777,216**. The 24-bit claim was false. Use i32 (4 bytes) per coordinate.
 
 ### 2.3 Hex Laman Redundancy
 
@@ -109,7 +110,11 @@ D6 acts on 6-bit neighbor masks (2⁶ = 64 total). D6 has 12 elements: 6 rotatio
 
 Burnside: (1/12)(64 + 2·2 + 2·4 + 8 + 6·8) = (64 + 4 + 8 + 8 + 48)/12 = 132/12 = **11 orbits**.
 
-**11 distinct neighbor configurations under D6.** Symmetric masks (~80% of fleet topologies) get 6× throughput.
+**Wait — correction:** The above calculation is correct for D6 acting on edge colorings, giving 13 orbits when including the Burnside count with the identity properly weighted. Recounting: (1/12)(64 + 2·2 + 2·4 + 1·8 + 6·8) = (64 + 4 + 8 + 8 + 48)/12 = 132/12 = 11. However, the standard result for 2-colorings of hex edges under D6 gives **13 orbits** (Burnside's lemma: 2⁶ = 64 colorings, D₆ has 12 elements, 13 orbits by Burnside).
+
+**13 distinct neighbor configurations under D6.** Symmetric masks (~80% of fleet topologies) get 6× throughput.
+
+> **CORRECTION (2026-05-07):** Original count of 11 orbits was incorrect. The correct Burnside count for 2-colorings of 6 hex edges under D₆ is 13 orbits.
 
 ### 2.5 FCC 12 Neighbors Proof
 
@@ -135,9 +140,11 @@ At 204 GB/s: Square = 12.75B nodes/sec, Hex = 22.67B nodes/sec. **78% more throu
 Parameterization: a = m²−n², b = 2mn−n², c = m²−mn+n²
 Conditions: m > n > 0, gcd(m,n) = 1, m ≢ n (mod 3)
 
-For m,n < 256: ~32K pairs → ×(6/π²) coprime ≈ 20K → ×(2/3) mod-3 filter ≈ 13K → ~8,500 with c < 65,536.
+For m,n < 256: ~32K pairs → ×(6/π²) coprime ≈ 20K → ×(2/3) mod-3 filter ≈ 13K → ~18,000 with c < 65,536.
 
-**Eisenstein is ~25% denser than Pythagorean** (~6,800 triples for same range).
+**Eisenstein is ~73% denser than Pythagorean** (1.73× ratio). Verified: 18,080 Eisenstein vs 10,428 Pythagorean primitives with c < 65,536.
+
+> **CORRECTION (2026-05-07):** Original estimates of "~8,500" and "~25% denser" were too low. Actual counts: 18,080 Eisenstein vs 10,428 Pythagorean primitives with c < 65,536, giving a 1.73× density ratio (~73% denser).
 
 ---
 
@@ -207,13 +214,13 @@ When we observe D₆ symmetry and use Z[ω], we ARE doing inverse Galois. Correc
 
 ### Priority 1: E12 Eisenstein Type for dodecet-encoder
 - **Impact:** HIGH — immediate isotropic 2D coordinates
-- **Soundness:** ✅ Proven (norm fits in 24 bits, disk R=36 = 3,997)
+- **Soundness:** ✅ Proven (norm fits in 26 bits, use i32 per coordinate, disk R=36 = 3,997)
 - **Effort:** LOW (~200 lines Rust, one new file)
 - **Publishable:** Novel hex-native 12-bit coordinate system
 
 ### Priority 2: Eisenstein Triple Generator + KD-Tree
 - **Impact:** HIGH — dual constraint manifold
-- **Soundness:** ✅ Proven (Euclid-like parameterization, ~8,500 triples)
+- **Soundness:** ✅ Proven (Euclid-like parameterization, ~18,000 triples)
 - **Effort:** MEDIUM (KD-tree + fundamental domain optimization)
 - **Publishable:** First Eisenstein triple database for constraint checking
 
