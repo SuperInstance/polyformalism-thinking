@@ -1,5 +1,15 @@
 # Polyformalism: Multi-Formalism Creative Cognition
 
+
+## Meta
+
+**Domain:** ai-agents
+**Depends on:** —
+**Depended by:** —
+**Implements:** novel-thinking, language-constraints, cognitive-framework
+**Related:** linguistic-polyformalism-shell, polyformalism-a2a-js
+
+
 **Think in structures that aren't native to you. Solve problems by imposing constraints from outside your default cognitive mode.**
 
 Polyformalism is the practice of solving a problem in one formalism by forcing it through the constraints of another formalism — writing code as prose, designing architecture as music, analyzing data as geometry. When your native formalism produces the same dead-end answer, a different formalism can break the loop.
