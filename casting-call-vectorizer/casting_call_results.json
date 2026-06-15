@@ -1,0 +1,129 @@
+{
+  "results": [
+    {
+      "variant_id": "ba2911f49d3c",
+      "output": "From a rigorous mathematical perspective: Step 1: Define the fleet as N agents with binary outputs {-1, +1}.\nStep 2: The aggregate output is the sum of individual contributions.\nStep 3: By CLT, the variance of the sum scales as 1/N.\nStep 4: Therefore \u03b4(N) = (1/\u221aN)(1 \u2212 3/(2N)) bounds the correction.\nStep 5: At N=50, this gives CCR = 86.28%, matching Monte Carlo.\nStep 6: The result is important because it enables cost prediction at scale.",
+      "scores": {
+        "Boundary": 0.264,
+        "Pattern": 0.0,
+        "Process": 0.6,
+        "Knowledge": 0.25,
+        "Social": 0.16666666666666666,
+        "DeepStruct": 0.0,
+        "Instrument": 0.0,
+        "Paradigm": 0.0,
+        "Stakes": 0.5
+      },
+      "alignment": 0.2429689025427857,
+      "config": {
+        "variant_id": "ba2911f49d3c",
+        "system_prompt": "You are a rigorous mathematician. Value proof, precision, and elegance.",
+        "temperature": 0.1,
+        "seed": 654,
+        "top_k": 40,
+        "presence_penalty": 0.0
+      },
+      "timestamp": 1781565008.5131714
+    },
+    {
+      "variant_id": "c0eee033ab64",
+      "output": "In engineering terms: Think of the conservation law like a jazz rhythm section. Each musician (agent) adds their voice, but the beauty emerges from the cancellation \u2014 the silence between notes is as important as the notes themselves. The formula \u03b4(n) = (1/\u221an)(1 \u2212 3/(2n)) captures this: as more agents join, the noise cancels and the underlying pattern emerges. This is deeply connected to the Central Limit Theorem, but also to the Japanese concept of \u9593 (ma) \u2014 the negative space that gives meaning ",
+      "scores": {
+        "Boundary": 0.43999999999999995,
+        "Pattern": 0.5,
+        "Process": 0.0,
+        "Knowledge": 0.25,
+        "Social": 0.5,
+        "DeepStruct": 1.0,
+        "Instrument": 0.25,
+        "Paradigm": 0.0,
+        "Stakes": 0.25
+      },
+      "alignment": 0.6476963895329193,
+      "config": {
+        "variant_id": "c0eee033ab64",
+        "system_prompt": "You are a practical engineer. Value working code, measurable results, and simplicity.",
+        "temperature": 0.45,
+        "seed": 114,
+        "top_k": 40,
+        "presence_penalty": 0.0
+      },
+      "timestamp": 1781565008.5134654
+    },
+    {
+      "variant_id": "6297a1c33998",
+      "output": "In the language of poetry: Imagine each agent in the fleet as a wave on the ocean. The conservation law tells us that as waves accumulate, they interfere destructively \u2014 the peaks and troughs cancel, leaving only the underlying current. \u03b4(n) = (1/\u221an)(1 \u2212 3/(2n)) is the mathematical expression of this cancellation. At n=50, 86.28% of the wave energy cancels, and what remains is the signal \u2014 the productive computation. This matters because it means scaling is NOT linear; it's sublinear and predict",
+      "scores": {
+        "Boundary": 0.43999999999999995,
+        "Pattern": 0.0,
+        "Process": 0.2,
+        "Knowledge": 0.0,
+        "Social": 0.5,
+        "DeepStruct": 1.0,
+        "Instrument": 0.0,
+        "Paradigm": 0.0,
+        "Stakes": 0.25
+      },
+      "alignment": 0.48581121968021407,
+      "config": {
+        "variant_id": "6297a1c33998",
+        "system_prompt": "You are a poet who sees mathematics everywhere. Value metaphor, beauty, and hidden connections.",
+        "temperature": 0.8,
+        "seed": 25,
+        "top_k": 40,
+        "presence_penalty": 0.0
+      },
+      "timestamp": 1781565008.513712
+    },
+    {
+      "variant_id": "df2bb3e825f5",
+      "output": "Let me explain this clearly: The conservation law is a love letter written in eigenvalues. Each agent auditions with their spectral fingerprint \u2014 a Laplacian that encodes their style. The Fiedler vector sorts them into harmony. And the formula \u03b4(n) = (1/\u221an)(1 \u2212 3/(2n)) is the sheet music for the ceremony. At n=50, the orchestra achieves 86.28% coherence \u2014 most of the noise has cancelled, and what remains is music. The deep structure here is recursion: the law governs its own optimization. The ca",
+      "scores": {
+        "Boundary": 0.3,
+        "Pattern": 0.0,
+        "Process": 0.0,
+        "Knowledge": 0.0,
+        "Social": 0.3333333333333333,
+        "DeepStruct": 1.0,
+        "Instrument": 0.25,
+        "Paradigm": 0.0,
+        "Stakes": 0.0
+      },
+      "alignment": 0.4425463130037495,
+      "config": {
+        "variant_id": "df2bb3e825f5",
+        "system_prompt": "You are a patient teacher. Value clarity, examples, and making the complex accessible.",
+        "temperature": 1.15,
+        "seed": 759,
+        "top_k": 40,
+        "presence_penalty": 0.0
+      },
+      "timestamp": 1781565008.514227
+    },
+    {
+      "variant_id": "4ee1e7b572cb",
+      "output": "From a rigorous mathematical perspective: The conservation law is a love letter written in eigenvalues. Each agent auditions with their spectral fingerprint \u2014 a Laplacian that encodes their style. The Fiedler vector sorts them into harmony. And the formula \u03b4(n) = (1/\u221an)(1 \u2212 3/(2n)) is the sheet music for the ceremony. At n=50, the orchestra achieves 86.28% coherence \u2014 most of the noise has cancelled, and what remains is music. The deep structure here is recursion: the law governs its own optimiz",
+      "scores": {
+        "Boundary": 0.3,
+        "Pattern": 0.0,
+        "Process": 0.0,
+        "Knowledge": 0.0,
+        "Social": 0.3333333333333333,
+        "DeepStruct": 1.0,
+        "Instrument": 0.25,
+        "Paradigm": 0.0,
+        "Stakes": 0.0
+      },
+      "alignment": 0.4425463130037495,
+      "config": {
+        "variant_id": "4ee1e7b572cb",
+        "system_prompt": "You are a rigorous mathematician. Value proof, precision, and elegance.",
+        "temperature": 1.5,
+        "seed": 281,
+        "top_k": 40,
+        "presence_penalty": 0.0
+      },
+      "timestamp": 1781565008.5146942
+    }
+  ]
+}
