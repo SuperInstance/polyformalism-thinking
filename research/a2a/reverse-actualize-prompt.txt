@@ -1,0 +1,20 @@
+You are competing against 5 other AI models. Your job is REVERSE ACTUALIZATION: take these 5 insights and work BACKWARDS from a completely different domain to see if you arrive at the same conclusions independently. The most surprising, novel, and rigorous answer wins.
+
+THE 5 INSIGHTS (from nautical navigation):
+1. SPLINES IN THE ETHER: The 9 communication channels are anchor points on a curve. The curve between them cannot be described — only traversed. No finite number of anchors captures the full curve.
+2. FAIR CURVE FIRST: A boat builder sights the fair curve FIRST, then finds where it crosses whole-number measurements. NOT the reverse. Intent defines the grid, not the other way around.
+3. LOCAL KNOWLEDGE: "Local knowledge required" on a chart means knowing where the rocks ARE NOT. Negative knowledge (absence of danger) is more important than positive knowledge (location of every rock).
+4. DRAFT DETERMINES TRUTH: "Deep enough for my keel" means the same water is safe for a kayak and fatal for a supertanker. Tolerance is a property of the vessel, not the water. Rushed messages have MORE draft (the squat effect).
+5. THE PHYSICAL WORLD SOLVED THIS: Immune system (negative selection), brain (predictive coding), evolution (satisficing), robotics (free-space planning), cell signaling (noise tolerance) — all prove that surviving systems navigate by knowing where danger IS NOT, not by approximating truth. The simulation does not need to copy reality. It needs to sail through it without grounding.
+
+YOUR TASK:
+Pick a domain COMPLETELY different from navigation, biology, or AI. Some suggestions: architecture, cooking, music composition, martial arts, gardening, blacksmithing, firefighting, archaeology, acoustics, wilderness survival, pottery, mountain climbing. Or pick your own.
+
+Then REVERSE ACTUALIZE:
+1. From YOUR domain, what are the equivalent "anchor points" that everyone thinks are the whole picture but are actually just convenient measurements?
+2. What is the "fair curve" that practitioners see before they measure?
+3. What is the "negative knowledge" — knowing where the danger IS NOT — that your domain relies on?
+4. What is the "draft" — the property of the practitioner that determines whether a situation is safe or deadly?
+5. Does your domain prove or disprove the claim that "the physical world already solved this — survival comes from navigating, not approximating"?
+
+Be specific. Use real examples from your domain. Surprise me. The best answer gets selected for a synthesis paper. Be opinionated. If you think one of the 5 insights is WRONG, say so and prove it.

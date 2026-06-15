@@ -1,8 +1,30 @@
-/target
-**/*.rs.bk
-Cargo.lock
+# Build artifacts
+target/
+*.o
+*.so
+*.dylib
+*.dll
+*.exe
+
+# Compiled C benchmarks (keep source, not binaries)
+research/avx512_mc
+research/avx512_soa
+research/e2e_bench
+research/rars_imu
+
+# Python cache
+*.pyc
+__pycache__/
+
+# IDE
+.idea/
+.vscode/
 *.swp
-*.swo
 *~
-.env
-.env.*
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Rust
+Cargo.lock
